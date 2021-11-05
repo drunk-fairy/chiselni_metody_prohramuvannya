@@ -1,6 +1,9 @@
 import numpy as np
 import math
 
+# Avdeeva Serafima FIT 2-4 
+# lab 8 variant 1
+
 xarr = [2.4, 2.6, 2.8, 3.0, 3.2, 3.4]
 yarr = [3.526, 3.782, 3.945, 4.043, 4.104, 4.155]
 
