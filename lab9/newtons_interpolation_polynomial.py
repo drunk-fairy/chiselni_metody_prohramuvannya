@@ -50,7 +50,7 @@ dod2 = []
 
 # I had a case when my code didn't work properly without copying.
 # Here it seems to be unnecessary, but I left it in the comments
-# just to be on the safe side
+# just to be on the safe side ¯\_(ツ)_/¯
 
 d1 = q1
 d2 = q2
