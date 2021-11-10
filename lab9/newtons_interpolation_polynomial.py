@@ -1,6 +1,6 @@
 from numpy import *
 from math import *
-import copy
+#import copy
 import matplotlib.pyplot as plt
 
 # Avdeeva Serafima FIT 2-4 
@@ -45,8 +45,15 @@ n2 = yarr[-1] + q2 * y(yarr, 1)[-2]
 dod1 = []
 dod2 = []
 
-d1 = copy.copy(q1)
-d2 = copy.copy(q2)
+#d1 = copy.copy(q1)
+#d2 = copy.copy(q2)
+
+# I had a case when my code didn't work properly without copying.
+# Here it seems to be unnecessary, but I left it in the comments
+# just to be on the safe side
+
+d1 = q1
+d2 = q2
 
 for i in range (len(xarr)):
     d1 = d1 * (q1 - i)
