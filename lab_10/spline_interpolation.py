@@ -10,6 +10,8 @@ y = [1.75, 2.68, 1.24, 0.72, 1.35]
 #x = [0, 1.4, 2.3, 3.3, 4.5]
 #y = [1, 1.155, 0.079, -1.145, -1.188]
 
+xs = linspace(x[0], x[-1], 100)
+
 x_i = sp.symbols('x_i')
 
 h = []
@@ -82,24 +84,39 @@ def spline_fun(xk):
         print(spline(i, x[i]))
     print('\n')
 
-    for i in range(len(xk)):
-        if (xk[i] >= x[0]) & (xk[i] < x[1]):
-            yi = spline(0, xk[i] )
+    i = len(xk)-1 
+    j = len(x)-1
 
-        elif (xk[i] >= x[1]) & (xk[i] < x[2]):
-            yi = spline(1, xk[i] )
+    while i >= 0:
+
+        while (xk[i] >= x[j]):
+            yi = spline(j, xk[i])
+            ys.insert(0, yi)
+            if i == 0:
+                break
+            i -= 1
+
+        if j == 0:
+           break
+        j -= 1 
+        
+    #for i in range(len(xk)):
+        #if (xk[i] >= x[0]) & (xk[i] < x[1]):
+            #yi = spline(0, xk[i] )
+
+        #elif (xk[i] >= x[1]) & (xk[i] < x[2]):
+            #yi = spline(1, xk[i] )
             
-        elif (xk[i] >= x[2]) & (xk[i] < x[3]):
-            yi = spline(2, xk[i] )
+        #elif (xk[i] >= x[2]) & (xk[i] < x[3]):
+            #yi = spline(2, xk[i] )
   
-        elif (xk[i] >= x[3]) & (xk[i] < x[4]):
-            yi = spline(3, xk[i] )
+        #elif (xk[i] >= x[3]) & (xk[i] < x[4]):
+            #yi = spline(3, xk[i] )
 
-        ys.append(yi)
+        #ys.append(yi)
 
     return ys
 
-xs = linspace(0, 1.5, 100)
 xsl = xs.tolist()
 spl = spline_fun(xsl)
 
